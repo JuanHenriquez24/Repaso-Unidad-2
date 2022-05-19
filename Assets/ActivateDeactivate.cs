@@ -6,24 +6,20 @@ using UnityEngine.UI;
 public class ActivateDeactivate : MonoBehaviour {
 
     public GameObject inputField;
-    public bool pressed;
 
-    private void Start()
-    {
-        pressed = false;
-    }
     public void ActivateAndDeactivate()
     {
-        if (pressed)
-        {
-            inputField.SetActive(true);
-            pressed = false;
-        }
-        if (!pressed)
+        /*
+          if (inputField.activeInHierarchy)
         {
             inputField.SetActive(false);
-            pressed = true;
         }
+        else
+        {
+            inputField.SetActive(true);
+        }
+        */
+        inputField.SetActive(!inputField.activeInHierarchy);
     }
 	// Update is called once per frame
 	void Update () {
